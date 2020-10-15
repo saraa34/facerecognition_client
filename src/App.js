@@ -88,7 +88,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    fetch('https://git.heroku.com/cryptic-sea-21075.git/imageurl', {
+    fetch('https://cryptic-sea-21075.herokuapp.com/imageurl', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -98,7 +98,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://git.heroku.com/cryptic-sea-21075.git/image', {
+          fetch('https://cryptic-sea-21075.herokuapp.com/image', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
